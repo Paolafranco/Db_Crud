@@ -60,5 +60,6 @@ namespace TransaccionPao
                 MessageBox.Show("Sus datos se eliminaron correctamente");
             }
         }
+
     }
 }
