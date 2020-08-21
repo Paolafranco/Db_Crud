@@ -16,7 +16,7 @@ namespace TransaccionPao
 
         public DataTable Consultar()
         {
-            string query = "SELECT * FROM clientes where estado=true";
+            string query = "select nombre, apellido, direccion, cuenta, saldos from clientes where estado = true";
             NpgsqlCommand conector = new NpgsqlCommand(query, conexionDb);
             NpgsqlDataAdapter datos = new NpgsqlDataAdapter(conector);
             DataTable tabla = new DataTable();
@@ -86,10 +86,12 @@ namespace TransaccionPao
             conexionDb.Close();
             MessageBox.Show("Sus datos se editaron exitosamente.");
         }
-        public void EliminarCliente(string nombre, string apellido, string direccion, string cuenta, int saldos)
+        public void EliminarCliente( string cuenta)
         {
             conexionDb.Open();
-            string query1 = $"select sp_Crud (3,'{nombre}','{apellido}','{direccion}','{cuenta}',{saldos},true)";
+
+            var x = 0;
+            string query1 = $"select sp_Crud (3,'xx','xx','xx','{cuenta}',{x},false)";
             NpgsqlCommand ejecutor1 = new NpgsqlCommand(query1, conexionDb);
             ejecutor1.ExecuteNonQuery();
 

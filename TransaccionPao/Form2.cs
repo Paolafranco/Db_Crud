@@ -53,7 +53,7 @@ namespace TransaccionPao
         {
             try
             {
-                conectandose.EliminarCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, Convert.ToInt32(textBox5.Text));
+                conectandose.EliminarCliente(textBox6.Text);
             }
             catch
             {
